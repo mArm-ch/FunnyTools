@@ -13,7 +13,7 @@ then
 	chmod +x "/tmp/pyc/pyc.py"
 
 	echo "#!/bin/bash" >> "/tmp/pyc/l.sh"
-	echo "python pyc.py $1" >> "/tmp/pyc/l.sh"
+	echo "python pyc.py $1 $2 $3 $4" >> "/tmp/pyc/l.sh"
 	chmod +x "/tmp/pyc/l.sh"
 
 	source "/tmp/pyc/l.sh" &
